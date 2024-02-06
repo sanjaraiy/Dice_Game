@@ -2,21 +2,22 @@ import { useState } from "react";
 import StartGame from "./components/StartGame";
 import GamePlay from "./components/GamePlay";
 
-
-
 function App() {
- 
-  const [isGameStart,setIsGameStart]=useState(true)
+  const [isGameStart, setIsGameStart] = useState(true);
 
-  const toggleGamePlay=()=>{
-      setIsGameStart((prev) => !prev);
-  }
+  const toggleGamePlay = () => {
+    setIsGameStart((prev) => !prev);
+  };
 
-return (
+  return (
     <>
-      {isGameStart ? (<GamePlay></GamePlay>) : (<StartGame toggle={toggleGamePlay} ></StartGame>)}
+      {isGameStart ? (
+        <GamePlay></GamePlay>
+      ) : (
+        <StartGame toggle={toggleGamePlay}></StartGame>
+      )}
     </>
-  )
+  );
 }
 
-export default App; 
+export default App;

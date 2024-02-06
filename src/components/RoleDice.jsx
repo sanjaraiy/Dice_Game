@@ -1,37 +1,32 @@
-import styled from "styled-components"
+import styled from "styled-components";
 import { useState } from "react";
 
-function RoleDice({currentDice,roleDice}) {
-  
-    
-     
-   
-
+function RoleDice({ currentDice, roleDice }) {
   return (
     <DiceContainer>
-        <div onClick={roleDice} className="dice">
-            <img src={`/Image/dice_${currentDice}.png`} alt="" />
-        </div>
-        <p>Click on Dice to roll</p>
+      <div onClick={roleDice} className="dice">
+        <img src={`/Image/dice_${currentDice}.png`} alt="" />
+      </div>
+      <p>Click on Dice to roll</p>
     </DiceContainer>
-  )
+  );
 }
 
-export default RoleDice
+export default RoleDice;
 
 const DiceContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    display:flex;
-   flex-direction:column;
-    align-items:center;
+  .dice {
+    cursor: pointer;
+  }
    
-     
-    .dice{
-      cursor:pointer;  
-    }
-
-    p{
-       font-size:24px;
-    }
-
-`
+  .dice img{
+    width:100px;
+  }
+  p {
+    font-size: 24px;
+  }
+`;
